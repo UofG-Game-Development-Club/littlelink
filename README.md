@@ -18,7 +18,7 @@ Everything is in `index.html`. You can edit it right on GitHub (open the file, c
 
 **Add a button:** copy an existing one and change the class, icon and link. There are ready-made commented out buttons for the website, GitHub and email near the bottom of the list, just remove the `<!--` and `-->` around one and fill it in. Every available icon is in `images/icons/` and the matching `button-...` classes are in `css/brands.css`.
 
-**Change the logo:** replace both `images/avatar.png` (128x128) and `images/avatar@2x.png` (256x256). The @2x one is also the image shown when the link is shared on Discord or Instagram.
+**Change the logo:** replace both `images/logo.png` (128x128) and `images/logo@2x.png` (256x256). The @2x one is also the image shown when the link is shared on Discord or Instagram.
 
 ## Hosting
 

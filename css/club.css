@@ -1,0 +1,78 @@
+/*
+  Guelph Game Dev theme, layered on top of LittleLink's styles.
+  Colours are taken from the club mascot. Change them here in one place.
+*/
+:root {
+  --club-bg-top: #3a1834;      /* plum */
+  --club-bg-bottom: #170a15;   /* near-black plum */
+  --club-card: #2b1227;        /* button background */
+  --club-coral: #e8654f;       /* mascot red/coral */
+  --club-coral-deep: #c8432f;
+  --club-peach: #f6a58a;
+  --club-cream: #fff1ea;
+  --club-muted: #e2b7ae;
+  --club-gold: #f7b45c;
+}
+
+/* Background and text (beats LittleLink's dark/auto theme rules) */
+:root.theme-dark body,
+:root.theme-auto body,
+body {
+  background-color: var(--club-bg-bottom);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232, 101, 79, 0.22), transparent 70%),
+    linear-gradient(180deg, var(--club-bg-top) 0%, var(--club-bg-bottom) 70%);
+  background-attachment: fixed;
+  color: var(--club-cream);
+  min-height: 100vh;
+}
+
+/* Logo with a soft coral ring */
+.avatar {
+  box-shadow: 0 0 0 4px var(--club-coral), 0 0 40px rgba(232, 101, 79, 0.45);
+  background: var(--club-card);
+}
+
+h1 { color: var(--club-cream); }
+.container p { color: var(--club-muted); }
+
+/* Every button in club colours, keeping each site's icon */
+.button-stack .button {
+  --button-background: var(--club-card);
+  --button-text: var(--club-cream);
+  --button-border: 2px solid rgba(232, 101, 79, 0.55);
+  background-image: none;   /* some brands (Instagram) use a gradient */
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.button-stack .button:hover {
+  --button-background: #3d1937;
+  --button-border: 2px solid var(--club-coral);
+  transform: translateY(-2px);
+}
+
+/* The first button is the "what's coming up" slot, so it stands out */
+.button-stack .button:first-child {
+  --button-background: linear-gradient(135deg, var(--club-coral), var(--club-coral-deep));
+  --button-border: 2px solid var(--club-peach);
+  background-image: var(--button-background);
+  box-shadow: 0 6px 20px rgba(232, 101, 79, 0.35);
+}
+.button-stack .button:first-child:hover {
+  --button-border: 2px solid var(--club-cream);
+}
+
+/* Links, focus ring, footer */
+:root.theme-dark a:not(.button),
+:root.theme-auto a:not(.button),
+a:not(.button) { color: var(--club-peach); }
+:root.theme-dark a:not(.button):hover,
+:root.theme-auto a:not(.button):hover,
+a:not(.button):hover { color: var(--club-gold); }
+:root.theme-dark :focus-visible,
+:root.theme-auto :focus-visible { outline-color: var(--club-gold); }
+footer { color: var(--club-muted); opacity: 0.8; }
+
+@media (prefers-reduced-motion: reduce) {
+  .button-stack .button { transition: none; }
+  .button-stack .button:hover { transform: none; }
+}

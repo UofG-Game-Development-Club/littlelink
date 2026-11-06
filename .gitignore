@@ -3,3 +3,6 @@
 .devcontainer
 .wrangler/
 node_modules/
+.dev.vars
+.wrangler
+node_modules

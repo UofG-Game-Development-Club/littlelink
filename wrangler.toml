@@ -1,6 +1,15 @@
 name = "littlelink"
+main = "worker/index.js"
 compatibility_date = "2026-01-27"
 
 [assets]
 directory = "./"
+binding = "ASSETS"
 html_handling = "auto-trailing-slash"
+
+# Click and view stats (see worker/index.js). Pages that aren't files, like
+# /stats and /api/hit, go to the Worker; everything else is served as a file.
+[[d1_databases]]
+binding = "DB"
+database_name = "links-stats"
+database_id = "f4741096-43da-49b9-96db-3403d817ca58"
